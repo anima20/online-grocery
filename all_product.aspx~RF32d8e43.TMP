@@ -1,0 +1,59 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="all_product.aspx.cs" Inherits="project.WebForm1" %>
+
+<!DOCTYPE html>
+<head runat="server">
+	
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div>
+    <table>
+    </table>
+    <asp:DataList ID="DataList1" runat="server" DataKeyField="p_id" DataSourceID="SqlDataSource1" Height="293px" Width="310px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" RepeatColumns="4" RepeatDirection="Horizontal"  style="margin-left:125px ; margin-top: 40px ">
+    <ItemTemplate>
+         <table  style="margin-left:20px ; ">
+           <tr>
+               <td style="text-align:center ; background-color: #5f98f3">
+                   <asp:Label ID="Label1" runat="server" Text='<%# Eval("p_name") %>' Font-Bold="True" Font-Names="Arial" ForeColor="White" ></asp:Label>
+               </td>
+           </tr>
+           <tr>
+               <td style="text-align:center">
+                   <asp:Image ID="Image1" runat="server" BorderColor="#5F98F3" BorderWidth="1px" Height="279px" Width="278px" ImageUrl='<%# Eval("p_image") %>' />
+               </td>
+           </tr>
+           <tr>
+               <td style="text-align:center ; background-color: #5f98f3">
+                   <asp:Label ID="Label2" runat="server" Text="Price: Rs" Font-Bold="True" Font-Names="Arial" ForeColor="White" style="text-align:center"></asp:Label>
+                   <asp:Label ID="Label3" runat="server" Text='<%# Eval("p_price") %>' Font-Bold="True" Font-Names="Arial" ForeColor="White" style="text-align:center"></asp:Label>
+               </td>
+           </tr>
+           <tr>
+               <td align="center">Quantity
+                   <asp:DropDownList ID="DropDownList1" runat="server">
+                       <asp:ListItem>1</asp:ListItem>
+                       <asp:ListItem>2</asp:ListItem>
+                       <asp:ListItem>3</asp:ListItem>
+                       <asp:ListItem>4</asp:ListItem>
+                       <asp:ListItem>5</asp:ListItem>
+                       <asp:ListItem></asp:ListItem>
+                   </asp:DropDownList>
+               </td>
+           </tr>
+           <tr>
+               <td  style="text-align:center">
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="37px" ImageUrl="~/images/add_cart.jpg" Width="120px" CommandArgument='<%# Eval("p_id") %>' CommandName="AddToCart"/>
+                    
+               </td>
+           </tr>
+
+       </table>
+        <br />
+        <br />
+    </ItemTemplate>
+    </asp:DataList>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:projectConnectionString %>" SelectCommand="SELECT [p_id], [p_name], [p_image], [p_price] FROM [product] "></asp:SqlDataSource>
+    </div>
+    </form>
+</body>
+</html>

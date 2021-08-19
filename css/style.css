@@ -1,0 +1,124 @@
+﻿
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+   
+    
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 600px;
+   
+  
+}
+
+.wrapper {
+   
+    display: flex;
+    
+    width: 50%;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    opacity:0.7;
+}
+
+    
+    .wrapper .right {
+        width: 55%;
+        height: 110%;
+        padding: 30px;
+
+    }
+
+   
+
+      
+        .wrapper .left .img {
+            display: block;
+            width: 300px;
+            margin: 0px auto 0;
+        }
+
+    .wrapper .right {
+        background: black;
+        margin-left: 290px;
+    }
+
+        .wrapper .right .tabs ul {
+            text-align: center;
+        }
+
+            .wrapper .right .tabs ul li {
+                display: inline-block;
+                margin: 5px;
+                padding: 5px 10px;
+                font-size: 24px;
+                color: #494f57;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
+
+                .wrapper .right .tabs ul li.active {
+                    border-bottom: 2px solid #494f57;
+                }
+
+        .wrapper .right .register,
+        .wrapper .right .login {
+            margin-top: 20px;
+        }
+
+
+        .wrapper .right .input_field .input {
+            width: 100%;
+            margin-top: -2px;
+            padding: 10px 15px;
+            border: 0;
+          
+            font-size: 15px;
+            background: #ecebeb;
+        }
+
+#Button1 {
+    width: 100%;
+    background: #494f57;
+    height : 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color:yellow;
+}
+
+#Button2 {
+    width: 100%;
+    margin-top: 20px;
+    background: #494f57;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color:yellow;
+}
+
+            

@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+namespace project
+{
+    public partial class WebForm9 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string ConString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=anima;Integrated Security=True";
+            SqlConnection con = new SqlConnection(ConString);
+            string querystring = "Update users set password='" + pass.Text + "' where email='" + Request.QueryString["emailadd"] + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(querystring, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Response.Redirect("~/log.aspx");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('Password didn't change..!!');</script>");
+            }
+        }
+    }
+}
